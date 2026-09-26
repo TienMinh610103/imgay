@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: black;
+        }
+        
+        #enterScreen {
+            position: fixed;
+            inset: 0;
+            background: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+        }
+        
+        button {
+            padding: 16px 45px;
+            font-size: 22px;
+            color: white;
+            background: transparent;
+            border: 2px solid white;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background: white;
+            color: black;
+        }
+        
+        #video {
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="enterScreen">
+        <button onclick="startVideo()">I'm gay</button>
+    </div>
+
+    <video id="video" playsinline>
+        <source src="video.mp4" type="video/mp4">
+    </video>
+
+    <script>
+        function startVideo() {
+            const video = document.getElementById("video");
+            const enterScreen = document.getElementById("enterScreen");
+
+            enterScreen.style.display = "none";
+            video.style.display = "block";
+
+            video.play();
+        }
+    </script>
+
+</body>
+
+</html>
